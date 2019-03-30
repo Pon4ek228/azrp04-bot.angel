@@ -45,15 +45,6 @@ bot.on('message', msg => {
 
 };
 
-bot.login(process.env.token); // Авторизация бота
-bot.on('ready', () => {
-    console.log("Бот был успешно запущен!");
-    bot.user.setActivity('за сервером', { type: 'WATCHING' }); // В активности будет: 'смотрит за сервером'
-    bot.user.setPresence({ status: 'dnd' }); // Статус будет 'Не беспокоить', статусы: 'online', 'idle', 'dnd', 'invisible'
-    timer();
-    get_support();
-});
-
 
 bot.on('message', async message => {
   if(message.author.bot) return;
@@ -67,3 +58,5 @@ bot.on('message', async message => {
   let cmd = bot.commands.get(command.slice(prefix.length));
   if(cmd) cmd.run(bot,message,args);
 });
+
+bot.login(token);
