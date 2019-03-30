@@ -5,6 +5,7 @@ const fs = require('fs')
 let config = require('./botconfig.json');
 let token = config.token;
 let prefix = config.prefix;
+let serverid = '555334013255155712'
 
 fs.readdir('./cmds/',(err,files)=>{
   if(err) console.log(err);
