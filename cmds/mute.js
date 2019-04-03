@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args) => {
   }
   let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
   if(!tomute) return message.reply("`Используйте: !mute [@упоминание] [срок] [причина] `");
-  if(tomute.hasPermission("MANAGE_GUILD")) return message.reply("`Данного пользователя нельзя мутить!`");
+  if(tomute.hasPermission("MANAGE_MESSAGES")) return message.reply("`Данного пользователя нельзя мутить!`");
   let reason = args.slice(2).join(" ");
   if(!reason) return message.reply("`, пожалуйста, укажите причину.`");
 
