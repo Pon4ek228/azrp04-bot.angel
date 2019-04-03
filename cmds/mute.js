@@ -16,7 +16,7 @@ module.exports.run = async (bot, message, args) => {
   let reason = args.slice(2).join(" ");
   if(!reason) return message.reply("`, пожалуйста, укажите причину.`");
 
-  let muterole = message.guild.roles.find(`name`, "muted");
+  let muterole = message.guild.roles.find(`name`, "Muted");
   //start of create role
   if(!muterole){
     try{
