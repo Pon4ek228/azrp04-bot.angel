@@ -26,7 +26,7 @@ global.unwatched = 0;
 global.hold = 0;
 global.closed = 0;
 
-async function get_support(){
+/*async function get_support(){
     let data_server = bot.guilds.get(serverid[0]);
     let db_chan = data_server.channels.find(c => c.name == 'timer');
     let chandler_server = bot.guilds.get(serverid[1]);
@@ -53,7 +53,7 @@ async function get_support(){
         global.closed = rep_message.content.split('\n')[6].match(re)[0];
     }
 }
-
+*/
 const events = {
     MESSAGE_REACTION_ADD: 'messageReactionAdd',
     MESSAGE_REACTION_REMOVE: 'messageReactionRemove',
