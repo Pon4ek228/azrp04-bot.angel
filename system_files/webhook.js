@@ -1,4 +1,4 @@
-const Discord = require('discord.js');
+/*const Discord = require('discord.js');
 
 exports.send = async (bot, channel, message, webhook_name, time, avatar) => {
     if (!channel) return console.log('Канал не выбран.');
