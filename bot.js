@@ -2,7 +2,6 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 bot.commands = new Discord.Collection();
 const fs = require('fs')
-let token = config.token;
 let prefix = config.prefix;
 
 fs.readdir('./cmds/',(err,files)=>{
