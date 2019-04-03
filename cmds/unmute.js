@@ -4,7 +4,7 @@ const ms = require("ms");
 module.exports.run = async (bot, message, args, con, cfg) => {
 
 	let target = message.mentions.members.first() || message.guild.members.get(args[0]);
-	if(!target) return message.channel.send("`Используйте: !mute [@упоминание] [срок] [причина]`");
+	if(!target) return message.channel.send("`Используйте: !unmute [@упоминание]`");
 
 	let role = message.guild.roles.find(r => r.name == 'muted' );
 	if(!role || !target.roles.has(role.id)) return message.channel.send("Этот пользователь не имеет бана чата.");
