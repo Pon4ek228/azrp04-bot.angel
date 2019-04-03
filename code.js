@@ -16,7 +16,8 @@ let manytags = require('./system_files/manytags').get(); // При исполь�
 let rolesgg = require('./system_files/rolesgg').get(); // При использовании rolesgg[0] выведет первую роль.
 let canremoverole = require('./system_files/canremoverole').get(); // При использовании canremoverole[0] выведет первую роль.
 let canacceptremoverole = require('./system_files/canacceptremoverole').get(); // При использовании canacceptremoverole[0] выведет первую роль.
-let webhook = require('./system_files/webhook'); // Вебхук
+/*let webhook = require('./system_files/webhook'); // Вебхук
+*/
 let moderators = require('./system_files/moderators').getmod(); // Модераторы
 let admins = require('./system_files/moderators').getadmin(); // Администраторы
 let re = /(\d+(\.\d)*)/i; // Проверка на циферки.
