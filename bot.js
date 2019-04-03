@@ -22,23 +22,6 @@ bot.on('ready', () => {
   })
 });
 
-
-bot.on('message', msg => {
-
-  if(msg.content.startsWith("Ацтек")) {
-  if(msg.member.permissions.has('MANAGE_ROLES')){
-  let role = msg.guild.roles.find(`name`, `Muted`)
-  let user = msg.mentions.members.first();
-  user.addRole(role.id);
-  msg.reply(`` );
-  console.log(`Пользователю была выдана роль `)
-  } else {
-  msg.reply(`Вы не имеете право выдавать роли!`);
-  console.log(`Пользователь не имеет право выдавать роли!`);
-  }
-  }
-  });
-
 bot.on('ready', () => {
   console.log("Бот был успешно запущен!");
   bot.user.setActivity('за порядком', { type: 'WATCHING' }); // В активности будет: 'смотрит за сервером'
