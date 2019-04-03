@@ -19,6 +19,7 @@ let canacceptremoverole = require('./system_files/canacceptremoverole').get(); /
 let webhook = require('./system_files/webhook'); // Вебхук
 let moderators = require('./system_files/moderators').getmod(); // Модераторы
 let admins = require('./system_files/moderators').getadmin(); // Администраторы
+let mute = require('/system_files/mute').getmute(); // Команда mute
 let re = /(\d+(\.\d)*)/i; // Проверка на циферки.
 let global = {};
 global.all = 0;
