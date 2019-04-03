@@ -54,11 +54,11 @@ global.closed = 0;
         global.closed = rep_message.content.split('\n')[6].match(re)[0];
     }
 }
-*/
 const events = {
     MESSAGE_REACTION_ADD: 'messageReactionAdd',
     MESSAGE_REACTION_REMOVE: 'messageReactionRemove',
 };
+*/
 
 bot.login(process.env.token); // Авторизация бота
 bot.on('ready', () => {
