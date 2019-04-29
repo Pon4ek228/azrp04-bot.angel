@@ -43,7 +43,7 @@ module.exports.run = async (bot, message, args) => {
 
  try{
   await tomute.addRole(muterole);
-  message.channel.send(`\`Модератор\` ${message.author} \`успешно выдал мут игроку\` ${tomute} \`на ${mutetime}.\` \`Причина:\` \```prolog ${reason}.\````);
+  message.channel.send(`\`Модератор\` ${message.author} \`успешно выдал мут игроку\` ${tomute} \`на ${mutetime}.\` \`Причина:\` **${reason}.**`);
 } catch(e) {
   message.channel.send(`**Ошибка: ${e.message}**`);
 }
