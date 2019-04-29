@@ -49,9 +49,9 @@ module.exports.run = async (bot, message, args) => {
 }
 
   try{
-    await tomute.send(`Здравствуйте, Вы получили **бан чата** за нарушения правил на **Arizona Chandler** на ${mutetime}. Причина: ${reason}. Выдал: ${message.author} Если не согласны с наказанием - напишите жалобу на **модератора**. Прошу более не нарушать!`)
-  }catch(e){
-    message.reply(`**, мут был успешно выдан игроку ${tomute} на ${mutetime}, но у пользователя закрыто ЛС. Просьба сообщить ему причину мута в общем чате.**`)
+    await tomute.send(`\`Здравствуйте, Вы получили\` **бан чата** \`за нарушения правил на\` **Arizona Chandler** \`на ${mutetime}. Причина:\` **${reason}**\`. Выдал: ${message.author} Если не согласны с наказанием - напишите жалобу на\` **модератора** \`. Прошу более не нарушать!\``)
+  } catch(e) {
+    message.reply(`\`, мут был успешно выдан игроку ${tomute} на ${mutetime}, но у пользователя закрыто ЛС. Просьба сообщить ему причину мута в общем чате.\``)
   }
 
   let muteembed = new Discord.RichEmbed()
@@ -70,7 +70,7 @@ module.exports.run = async (bot, message, args) => {
 
   setTimeout(function(){
     tomute.removeRole(muterole.id);
-    message.channel.send(`**У <@${tomute.id}> мут был снят по окончанию срока.**`);
+    message.channel.send(`\`У <@${tomute.id}> мут был снят по окончанию срока.\``);
   }, ms(mutetime));
 
 
