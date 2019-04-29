@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args) => {
   }
   let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
   if(!tomute) return message.reply("`Используйте: !mute [@упоминание] [срок] [причина] `");
-  if(tomute.hasPermission("MANAGE_MESSAGES")) return message.reply("`Данного пользователя нельзя мутить!`");
+  if(tomute.hasPermission("MANAGE_MESSAGES")) return message.reply("`Данного пользователя нельзя замутить!`");
   let reason = args.slice(2).join(" ");
   if(!reason) return message.reply("`, пожалуйста, укажите причину.`");
 
@@ -43,7 +43,7 @@ module.exports.run = async (bot, message, args) => {
 
  try{
   await tomute.addRole(muterole);
-  message.channel.send(`**Модератор ${message.author} успешно выдал мут игроку ${tomute} на ${mutetime}. Причина: ${reason}.**`);
+  message.channel.send(`\`Модератор\` ${message.author} \`успешно выдал мут игроку\` ${tomute} \`на\` ${mutetime}\`.\` \`Причина: ${reason}.\``);
 } catch(e) {
   message.channel.send(`**Ошибка: ${e.message}**`);
 }
