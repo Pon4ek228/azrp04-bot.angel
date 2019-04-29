@@ -25,7 +25,7 @@ bot.on('ready', () => {
 
 bot.on('ready', () => {
   console.log("Бот был успешно запущен!");
-  bot.user.setActivity('за порядком', { type: 'WATCHING' }); // В активности будет: 'смотрит за сервером'
+  bot.user.setActivity('Жука', { type: 'LISTENING' }); // В активности будет: 'смотрит за сервером'
   bot.user.setPresence({ status: 'dnd' }); // Статус будет 'Не беспокоить', статусы: 'online', 'idle', 'dnd', 'invisible'
 });
 
