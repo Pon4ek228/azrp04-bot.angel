@@ -70,7 +70,7 @@ module.exports.run = async (bot, message, args) => {
 
   setTimeout(function(){
     tomute.removeRole(muterole.id);
-    message.channel.send(`\`У <@${tomute.id}> мут был снят по окончанию срока.\``);
+    message.channel.send(`\`У\` <@${tomute.id}> \`мут был снят по окончанию срока.\``);
   }, ms(mutetime));
 
 
