@@ -18,19 +18,15 @@ module.exports.run = async (bot, message, args) => {
     // Redenen verkrijgen en nakijken als je wel een redenen opgeeft.
     var reason = args.join(" ").slice(22);
 
-    if (!reason) return message.channel.reply("`Не указана причина!`");
+    if (!reason) return message.channel.send("`Не указана причина!`");
 
-    // Verkrijgen van de tijd.
     var tempBanTime = args[1];
 
-    // Nakijken als de tijd geldig is zie https://www.npmjs.com/package/ms voor meer info.
     if (ms(tempBanTime)) {
 
-        // We gaan een await gebruiken die de user bant en na een tijd deze unbant.
-        // Een await gaat wachten tot er een "belofte" komt.
         await message.guild.member(user).ban(reason);
 
-        message.channel.send(`\`Пользователь\` ${user} \`был заблокирован на\` ${tempBanTime} \`модератором ${!user}\``);
+        message.channel.send(`Пользователь ${user} был заблокирован на ${tempBanTime} модератором ${message.author}`);
 
         // We gaan een timeout zetten voor terug te unbannen.
         setTimeout(function () {
