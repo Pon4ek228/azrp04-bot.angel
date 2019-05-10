@@ -30,7 +30,7 @@ module.exports.run = async (bot, message, args) => {
         // Een await gaat wachten tot er een "belofte" komt.
         await message.guild.member(user).ban(reason);
 
-        message.channel.send(`\`Пользователь\` ${user} \`был заблокирован на\` ${tempBanTime} \`модератором ${member.id}\``);
+        message.channel.send(`\`Пользователь\` ${user} \`был заблокирован на\` ${tempBanTime} \`модератором ${!user}\``);
 
         // We gaan een timeout zetten voor terug te unbannen.
         setTimeout(function () {
