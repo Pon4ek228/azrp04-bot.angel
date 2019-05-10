@@ -25,6 +25,11 @@ module.exports.run = async (bot, message, args) => {
         await message.guild.member(user).ban(reason);
 
         message.channel.send(`\`Пользователь\` ${user} \`был заблокирован на ${tempBanTime} модератором\` ${message.author}\`. Причина:\` **${reason}**`);
+         try{
+             await user.send(`\`Здравствуйте, Вы получили блокировку за нарушения правил на\` **Arizona Chandler** \`на ${tempBanTime}. Причина:\` **${reason}**\`. Выдал:\` ${message.author}\`. Если не согласны с наказанием - напишите жалобу на\` **Администратора**\`. Прошу более не нарушать!\``)
+         } catch(e) {
+             message.reply(`\`, бан был успешно выдан игроку ${user} на ${tempBanTime}, но у пользователя закрыто ЛС. Просьба сообщить ему причину бана в общем чате.\``)
+         }
 
         // We gaan een timeout zetten voor terug te unbannen.
         setTimeout(function () {
@@ -36,9 +41,8 @@ module.exports.run = async (bot, message, args) => {
 
         }, ms(tempBanTime));
 
-    // Als je geen geldige tijd hebt opgegeven.
     } else {
-        return message.channel.send("Geef en geldige tijd op.");
+        return message.channel.send("`Неверно указано время!`");
     }
 
 }
