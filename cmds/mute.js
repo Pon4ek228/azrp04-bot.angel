@@ -14,7 +14,7 @@ module.exports.run = async (bot, message, args) => {
   if(!tomute) return message.reply("`Используйте: !mute [@упоминание] [срок] [причина] `");
   if(tomute.hasPermission("MANAGE_MESSAGES")) return message.reply("`Данного пользователя нельзя замутить!`");
   let reason = args.slice(2).join(" ");
-  if(!reason) return message.reply("`, пожалуйста, укажите причину.`");
+  if(!reason) return message.reply("`, пожалуйста, проверье правильность ввода!`");
 
   let muterole = message.guild.roles.find(`name`, "Muted ☊");
   //start of create role
@@ -51,7 +51,7 @@ module.exports.run = async (bot, message, args) => {
   try{
     await tomute.send(`\`Здравствуйте, Вы получили бан чата за нарушения правил на\` **Arizona Chandler** \`на ${mutetime}. Причина:\` **${reason}**\`. Выдал:\` ${message.author}\`. Если не согласны с наказанием - напишите жалобу на\` **модератора**\`. Прошу более не нарушать!\``)
   } catch(e) {
-    message.reply(`\`, мут был успешно выдан игроку ${tomute} на ${mutetime}, но у пользователя закрыто ЛС. Просьба сообщить ему причину мута в общем чате.\``)
+    message.reply(`\`у пользователя закрыто ЛС. Просьба сообщить ему причину мута в общем чате.\``)
   }
 
   let muteembed = new Discord.RichEmbed()
