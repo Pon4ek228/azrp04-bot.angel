@@ -13,7 +13,7 @@ module.exports.run = async (bot, message, args) => {
     if (!user) return message.channel.send("`Используйте: !ban [@упоминание] [time] [reason]`");
 
     // Nakijken als je de gebruiker wel kunt bannen.
-    if (user.hasPermission("MANAGE_MESSAGES")) return message.channel.send("`Этот пользователь не может быть забанен!");
+    if (user.hasPermission("MANAGE_MESSAGES")) return message.channel.send("`Этот пользователь не может быть забанен!`");
 
     // Redenen verkrijgen en nakijken als je wel een redenen opgeeft.
     var reason = args.join(" ").slice(22);
