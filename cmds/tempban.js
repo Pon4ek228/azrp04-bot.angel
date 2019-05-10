@@ -30,7 +30,7 @@ module.exports.run = async (bot, message, args) => {
             
             message.guild.unban(user.id);
 
-            message.channel.send(`\`Пользователь\` ${user} \`- был разблокирован по истечению срока.\``);
+            message.channel.send(`\`Пользователь\` ${user} \` был разблокирован по истечению срока.\``);
 
         }, ms(tempBanTime));
 
