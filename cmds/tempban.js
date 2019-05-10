@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args) => {
     // User opvragen en nakijken als je wel een user meegeeft.
     var user = message.guild.member(message.mentions.users.first());
 
-    if (!user) return message.channel.send("`Используйте: !ban [time] [reason]`");
+    if (!user) return message.channel.send("`Используйте: !ban [@упоминание] [time] [reason]`");
 
     // Nakijken als je de gebruiker wel kunt bannen.
     if (user.hasPermission("MANAGE_MESSAGES")) return message.channel.send("`Этот пользователь не может быть забанен!");
@@ -26,7 +26,7 @@ module.exports.run = async (bot, message, args) => {
 
         await message.guild.member(user).ban(reason);
 
-        message.channel.send(`Пользователь ${user} был заблокирован на ${tempBanTime} модератором ${message.author}`);
+        message.channel.send(`\`Пользователь\` ${user} \`был заблокирован на\` ${tempBanTime} \`модератором\` ${message.author}\`.\` \`Причина:\` **${reason}**`);
 
         // We gaan een timeout zetten voor terug te unbannen.
         setTimeout(function () {
@@ -46,5 +46,5 @@ module.exports.run = async (bot, message, args) => {
 }
 
 module.exports.help = {
-    name: "tempban"
+    name: "ban"
 }
