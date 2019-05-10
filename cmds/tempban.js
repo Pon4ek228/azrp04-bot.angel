@@ -15,10 +15,8 @@ module.exports.run = async (bot, message, args) => {
     // Nakijken als je de gebruiker wel kunt bannen.
     if (user.hasPermission("MANAGE_MESSAGES")) return message.channel.send("`Этот пользователь не может быть забанен!`");
 
-    // Redenen verkrijgen en nakijken als je wel een redenen opgeeft.
-    var reason = args.join(" ").slice(22);
-
-    if (!reason) return message.channel.send("`Не указана причина!`");
+    let reason = args.slice(2).join(" ");
+    if(!reason) return message.reply("`, пожалуйста, укажите причину.`");
 
     var tempBanTime = args[1];
 
