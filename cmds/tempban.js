@@ -24,7 +24,7 @@ module.exports.run = async (bot, message, args) => {
 
         await message.guild.member(user).ban(reason);
 
-        message.channel.send(`\`Пользователь\` ${user} \`был заблокирован на ${tempBanTime} модератором\` ${message.author}\`. Причина:\` **${reason}**`);
+        message.channel.send(`\`Пользователь\` ${user} \`был заблокирован на ${tempBanTime} Администратором\` ${message.author}\`. Причина:\` **${reason}**`);
          try{
              await user.send(`\`Здравствуйте, Вы получили блокировку за нарушения правил на\` **Arizona Chandler** \`на ${tempBanTime}. Причина:\` **${reason}**\`. Выдал:\` ${message.author}\`. Если не согласны с наказанием - напишите жалобу на\` **Администратора**\`. Прошу более не нарушать!\``)
          } catch(e) {
