@@ -26,7 +26,7 @@ module.exports.run = async (bot, message, args) => {
 
         await message.guild.member(user).ban(reason);
 
-        message.channel.send(`\`Пользователь\` ${user} \`был заблокирован на\` ${tempBanTime} \`модератором\` ${message.author}\`.\` \`Причина:\` **${reason}**`);
+        message.channel.send(`\`Пользователь\` ${user} \`был заблокирован на ${tempBanTime} модератором\` ${message.author}\`. Причина:\` **${reason}**`);
 
         // We gaan een timeout zetten voor terug te unbannen.
         setTimeout(function () {
