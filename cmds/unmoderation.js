@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args, con, cfg) => {
 
 	try {
 		await target.removeRole(role);
-		message.channel.send(`\`Пользователь\` ${target} \`был снят с поста модератора. Снял Главный Модератор\` ${message.author}\`.\``);
+		message.channel.send(`\`Пользователь\` ${target} \`был снят с поста модератора.\``);
 	} catch(e) {
 		message.channel.send(`**Ошибка: ${e.message}**`);
 	}
