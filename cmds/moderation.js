@@ -18,7 +18,7 @@ module.exports.run = async (bot, message, args) => {
 
  try{
   await tomute.addRole(muterole);
-  message.channel.send(`\`Пользователь ${tomute} назначен модератором.\``);
+  message.channel.send(`\`Пользователь \`${tomute}\` назначен модератором.\``);
 } catch(e) {
   message.channel.send(`**Ошибка: ${e.message}**`);
 }
