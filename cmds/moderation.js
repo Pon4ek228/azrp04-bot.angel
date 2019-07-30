@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args) => {
   let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
   if(!tomute) return message.reply("`Используйте: !moderation [@упоминание]`");
   if(tomute.hasPermission("MANAGE_MESSAGES")) return message.reply("`Данного пользователя нельзя замутить!`");
-  if(!reason) return message.reply("`, пожалуйста, проверье правильность ввода!`");
+  if(!tomute) return message.reply("`, пожалуйста, проверье правильность ввода!`");
 
   let muterole = message.guild.roles.find(`name`, "Модераторы");
 
