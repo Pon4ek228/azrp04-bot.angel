@@ -4,7 +4,7 @@ const prefix = "!";
 module.exports.run = async (bot, message, args) => {
 
 
-  if(!message.member.hasRole("Гл. Модератор")) return message.reply("`Нет прав для выполнения действия.`");
+  if(!message.member.hasPermission("VIEW_CHANNEL")) return message.reply("`Нет прав для выполнения действия.`");
   if(args[0] == "help"){
     message.reply("Usage: !moderation <user>");
     return;
