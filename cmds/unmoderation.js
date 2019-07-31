@@ -11,6 +11,8 @@ module.exports.run = async (bot, message, args, con, cfg) => {
 	try {
 		await target.removeRole(role);
 		message.channel.send(`\`Пользователь\` ${target} \`был снят с поста модератора.\``);
+		const channel = message.client.channels.find('name', "✅chat");
+channel.send(`\`Главный Модератор\` ${message.author} \`снял\` ${tomute} \`с поста Модератора.\``);
 	} catch(e) {
 		message.channel.send(`**Ошибка: ${e.message}**`);
 	}
