@@ -20,7 +20,7 @@ module.exports.run = async (bot, message, args) => {
   await tomute.addRole(muterole);
   message.channel.send(`\`Пользователь\` ${tomute} \`назначен модератором.\``);
    const channel = message.client.channels.find('name', "✅chat");
-channel.send(`\`Главный Модератор\` ${message.author.id} \`назначил\` ${tomute} \` модератором.\``);
+channel.send(`\`Главный Модератор\` ${message.author} \`назначил\` ${tomute} \`модератором.\``);
 } catch(e) {
   message.channel.send(`**Жууук, ну тут типа ошибка да: ${e.message}**`);
 }
