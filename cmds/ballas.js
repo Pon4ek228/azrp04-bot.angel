@@ -28,6 +28,8 @@ tomute.removeRole(removeall);
 }
 
   await(tomute.addRole(muterole.id));
+  });
+  
 
 module.exports.help = {
   name: "ballas"
