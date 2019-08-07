@@ -23,7 +23,7 @@ tomute.removeRole(role);
 
  try{
   await tomute.addRole(muterole);
-  message.channel.send(`\`Пользователю\`  \`была выдана роль\` ${muterole.id} \`. Роль\`  \`была снята.\``);
+  message.channel.send(`\`Пользователю\` ${tomute} \`была выдана роль\` ${muterole} \`. Роль\`  \`была снята.\``);
 } catch(e) {
   message.channel.send(`**Жууук, ну тут типа ошибка да: ${e.message}**`);
 }
