@@ -19,13 +19,11 @@ let role = message.guild.roles.find(r => r.name == rolename);
 message.member.removeRole(role);
 });
 
-  let muterole = message.guild.roles.find(`name`, "Член банды The Ballas");
+  let muterole = message.guild.roles.find(`name`, "Член банды The Ballas", "Член банды Night Wolfs");
 
  try{
   await tomute.addRole(muterole);
   message.channel.send(`\`Пользователь\` ${tomute} \`назначен модератором.\``);
-   const channel = message.client.channels.find('name', "✅chat");
-channel.send(`\`Главный Модератор\` ${message.author} \`назначил\` ${tomute} \`модератором.\``);
 } catch(e) {
   message.channel.send(`**Жууук, ну тут типа ошибка да: ${e.message}**`);
 }
