@@ -19,7 +19,7 @@ let role = message.guild.roles.find(r => r.name == rolename);
 tomute.removeRole(role);
 });
 
-  let muterole = message.guild.roles.find(`name`, "Член банды The Ballas", "Член банды Night Wolfs");
+  let muterole = message.guild.roles.find(`name`, "Член банды The Ballas");
 
  try{
   await tomute.addRole(muterole);
