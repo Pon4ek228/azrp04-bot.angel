@@ -19,17 +19,16 @@ let removeall = message.guild.roles.find(r => r.name == rolename);
 tomute.removeRole(removeall);
   
   let muterole = message.guild.roles.find(r => r.name == "Член банды The Ballas");
-
+    
  try{
   await tomute.addRole(muterole);
   message.channel.send(`\`Пользователю\` ${tomute} \`была выдана роль\` ${muterole} \`. Роль\` ${removeall} \`была снята.\``);
 } catch(e) {
   message.channel.send(`**Жууук, ну тут типа ошибка да: ${e.message}**`);
 }
-
   await(tomute.addRole(muterole.id));
-  });
-  
+}
+});
 
 module.exports.help = {
   name: "ballas"
