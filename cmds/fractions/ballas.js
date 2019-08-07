@@ -11,10 +11,10 @@ module.exports.run = async (bot, message, args) => {
   }
   let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
   if(!tomute) return message.reply("`Используйте: !ballas [@упоминание]`");
-  if(tomute.hasPermission("BAN_MEMBERS")) return message.reply("`Данного пользователя нельзя назначить!`");
+  if(tomute.hasPermission("BAN_MEMBERS")) return message.reply("`Ошибка! Нельзя выдать роль этому пользователю.`");
   if(!tomute) return message.reply("`, пожалуйста, проверье правильность ввода!`");
   
-  ["Член банды Night Wolfs", "Сотрудник Автошколы"].forEach(rolename => {
+  ["Агент ФБР", "Сотрудник Полиции ЛС", "Сотрудник Полиции СФ", "Сотрудник Полиции ЛВ", "Сотрудник Окружной Полиции", "Сотрудник Правительства", "Сотрудник Центрального банка", "Военнослужащий Армии ЛС", "Военнослужащий Армии СФ", "Сотрудник Тюрьмы", "Сотрудник Больницы ЛС", "Сотрудник Больницы СФ", "Сотрудник Больницы ЛВ", "Сотрудник СМИ СФ", "Сотрудник СМИ ЛС", "Сотрудник СМИ ЛВ", "Сотрудник Автошколы", "Член банды Night Wolfs", "Член банды The Rifa", "Член банды The Ballas", "Член банды Los-Santos Vagos", "Член банды Grove Street", "Член банды Varios Los Aztecas", "Член Русской Мафии", "Член мафии Yakuza", "Член мафии La Cosa Nostra", "Член мафии Warlock MC"].forEach(rolename => {
 let role = message.guild.roles.find(r => r.name == rolename);
 tomute.removeRole(role);
 });
@@ -23,7 +23,7 @@ tomute.removeRole(role);
 
  try{
   await tomute.addRole(muterole);
-  message.channel.send(`\`Пользователь\` ${tomute} \`назначен модератором.\``);
+  message.channel.send(`\`Пользователю\` ${tomute} \`была выдана роль\` ${muterole.id} \`. Роль\` ${role.id} \`была снята.\``);
 } catch(e) {
   message.channel.send(`**Жууук, ну тут типа ошибка да: ${e.message}**`);
 }
