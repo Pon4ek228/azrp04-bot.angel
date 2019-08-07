@@ -16,7 +16,7 @@ module.exports.run = async (bot, message, args) => {
   
   ["Член банды Night Wolfs", "Сотрудник Автошколы"].forEach(rolename => {
 let role = message.guild.roles.find(r => r.name == rolename);
-message.member.removeRole(role);
+tomute.removeRole(role);
 });
 
   let muterole = message.guild.roles.find(`name`, "Член банды The Ballas", "Член банды Night Wolfs");
