@@ -5,7 +5,7 @@ const prefix = "!";
 module.exports.run = async (bot, message, args) => {
 
 
-  if(!message.member.hasPermission("VIEW_CHANNEL")) return message.reply("`Нет прав для выполнения действия.`");
+  if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("`Нет прав для выполнения действия.`");
   if(args[0] == "help"){
     message.reply("Usage: !mute <user> <1s/m/h/d>");
     return;
