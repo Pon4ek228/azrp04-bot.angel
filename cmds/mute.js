@@ -5,7 +5,7 @@ const prefix = "!";
 module.exports.run = async (bot, message, args) => {
 
   client.on('message', msg => {
-    if (msg.channel.id === '555358179089842189') {
+    if (message.client.channels.find('name', "❌наказания") {
     }
 });
 
