@@ -49,9 +49,10 @@ module.exports.run = async (bot, message, args) => {
 }
 
   try{
-    await tomute.send(`\`Здравствуйте, Вы получили бан чата за нарушения правил на\` **Arizona Chandler** \`на ${mutetime}. Причина:\` **${reason}**\`. Выдал:\` ${message.author}\`. Если не согласны с наказанием - напишите жалобу на\` **модератора**\`. Прошу более не нарушать!\``)
+    const channel = message.client.channels.find('name', "✅chat");
+channel.send(`\`Модератор\` ${message.author} \`заглушил игрока\` ${tomute} \`на ${mutetime}.\` \`Причина:\` **${reason}.**`);
   } catch(e) {
-    message.reply(`\`у пользователя закрыто ЛС. Просьба сообщить ему причину мута в общем чате.\``)
+    message.reply(`\`нет доступа.\``)
   }
 
   let muteembed = new Discord.RichEmbed()
