@@ -4,6 +4,10 @@ const prefix = "!";
 
 module.exports.run = async (bot, message, args) => {
 
+  client.on('message', msg => {
+    if (msg.channel.id === '555358179089842189') {
+    }
+});
 
   if(!message.member.hasPermission("VIEW_CHANNEL")) return message.reply("`Нет прав для выполнения действия.`");
   if(args[0] == "help"){
@@ -49,7 +53,7 @@ module.exports.run = async (bot, message, args) => {
 }
 
   try{
-    const channel = message.client.channels.find('name', "✅chat");
+    const channel = message.client.channels.find('name', "🌏общение");
 channel.send(`\`Модератор\` ${message.author} \`заглушил игрока\` ${tomute} \`на ${mutetime}.\` \`Причина:\` **${reason}.**`);
   } catch(e) {
     message.reply(`\`нет доступа.\``)
