@@ -23,9 +23,9 @@ tomute.removeRole(removeall);
     
  try{
   await tomute.addRole(muterole);
-  message.channel.send(`\`Пользователю\` ${tomute} \`была выдана роль\` ${muterole} \`. Старые роли были сняты.\``);
+  message.channel.send(`\`Пользователю\` ${tomute} \`была выдана роль\` ${muterole} \`. Роли других фракций были сняты.\``);
 } catch(e) {
-  message.channel.send(`**Жууук, ну тут типа ошибка да: ${e.message}**`);
+  message.channel.send(`**ERROR 228/1337: ${e.message}**`);
 }
   await(tomute.addRole(muterole.id));
   }
