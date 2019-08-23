@@ -17,7 +17,7 @@ module.exports.run = async (bot, message, args) => {
 	} catch(e) {
 		message.channel.send(`**Ошибка: ${e.message}**`);
 	}
-
+}
 module.exports.help = {
   name: "unballas"
 }
