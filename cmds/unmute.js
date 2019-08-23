@@ -3,7 +3,8 @@ const ms = require("ms");
 
 module.exports.run = async (bot, message, args, con, cfg) => {
 
-	if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("`Нет прав для выполнения действия.`");
+	if (!message.member.roles.some(r=>["Ст. Модератор", "Модераторы", "Гл. Модератор", "Хелпер", "Администратор 4 уровня", "Администратор 3 уровня", "Куратор", "Продвинутый пользователь"].includes(r.name)) ) 
+    return message.reply("`Нет прав для выполнения действия.`");
 	let target = message.mentions.members.first() || message.guild.members.get(args[0]);
 	if(!target) return message.reply("`Используйте: !unmute [@упоминание]`");
 
