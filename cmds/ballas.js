@@ -3,7 +3,8 @@ const prefix = "!";
 
 module.exports.run = async (bot, message, args) => {
 
-   if(!message.member.rolePermissions = channel.permissionsFor("Ст. Модератор")) return message.reply("`Нет прав для выполнения действия.`");
+   if (!message.member.roles.some(r=>["Ст. Модератор"].includes(r.name)) ) 
+    return message.reply("`Нет прав для выполнения действия.`");
   if(args[0] == "help"){
     message.reply("Usage: !ballas <user>");
     return;
