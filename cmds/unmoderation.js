@@ -2,6 +2,8 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args, con, cfg) => {
 
+	if (!message.member.roles.some(r=>["Гл. Модератор", "Куратор", "Тех. Администратор Discord", "Зам. Тех. Администратора Discord"].includes(r.name)) ) 
+    return message.reply("`Нет прав для выполнения действия.`");
 	let target = message.mentions.members.first() || message.guild.members.get(args[0]);
 	if(!target) return message.reply("`Используйте: !unmoderation [@упоминание]`");
 
