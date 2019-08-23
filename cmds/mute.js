@@ -5,7 +5,8 @@ const prefix = "!";
 module.exports.run = async (bot, message, args) => {
 
 
-  if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("`Нет прав для выполнения действия.`");
+ if (!message.member.roles.some(r=>["Ст. Модератор", "Модераторы", "Гл. Модератор", "Хелпер", "Администратор 4 уровня", "Администратор 3 уровня", "Куратор", "Продвинутый пользователь"].includes(r.name)) ) 
+    return message.reply("`Нет прав для выполнения действия.`");
   if(args[0] == "help"){
     message.reply("Usage: !mute <user> <1s/m/h/d>");
     return;
@@ -43,7 +44,7 @@ module.exports.run = async (bot, message, args) => {
 
  try{
   await tomute.addRole(muterole);
-  message.channel.send(`\`Модератор\` ${message.author} \`успешно выдал мут игроку\` ${tomute} \`на ${mutetime}.\` \`Причина:\` **${reason}.**`);
+  message.channel.send(`\`Модератор\` ${message.author} \`выдал мут игроку\` ${tomute} \`на ${mutetime}.\` \`Причина:\` **${reason}.**`);
 } catch(e) {
   message.channel.send(`**Ошибка: ${e.message}**`);
 }
