@@ -3,8 +3,8 @@ const prefix = "!";
 
 module.exports.run = async (bot, message, args) => {
 
-
-  if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("`Нет прав для выполнения действия.`");
+if (!message.member.roles.some(r=>["Гл. Модератор", "Куратор", "Тех. Администратор Discord", "Зам. Тех. Администратора Discord"].includes(r.name)) ) 
+    return message.reply("`Нет прав для выполнения действия.`");
   if(args[0] == "help"){
     message.reply("Usage: !up <user>");
     return;
