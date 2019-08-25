@@ -17,7 +17,7 @@ module.exports.run = async (bot, message, args) => {
   let reason = args.slice(2).join(" ");
   if(!reason) return message.channel.send("`Не указана причина мута!`");
   if(!tomute.id == message.author.id) return message.channel.send("`Нельзя замутить самого себя!`");
- if (tomute.highestRole.position >= message.member.highestRole.position) return message.channel.send("`Нельзя использовать на старших по должности.`");
+  if (tomute.highestRole.position >= message.member.highestRole.position) return message.channel.send("`Нельзя использовать на старших по должности.`");
 
   let muterole = message.guild.roles.find(`name`, "Muted ☊");
   //start of create role
@@ -41,8 +41,7 @@ module.exports.run = async (bot, message, args) => {
   //end of create role
   let mutetime = args[1];
   if(!mutetime) return message.reply("`Вы не указали время.`");
-
-
+  if (tomute.roles.has(muterole.id)) return message.channel.send("`Данный пользователь уже имеет бан чата.`");
 
  try{
   await tomute.addRole(muterole);
