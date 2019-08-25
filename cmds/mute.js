@@ -13,7 +13,6 @@ module.exports.run = async (bot, message, args) => {
   }
   let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
   if(!tomute) return message.channel.send("`Используйте: !mute [@упоминание] [срок] [причина] `");
-  if(tomute.hasPermission("MANAGE_MESSAGES")) return message.channel.send("`Данного пользователя нельзя замутить!`");
   let reason = args.slice(2).join(" ");
   if(!reason) return message.channel.send("`Не указана причина мута!`");
   if(!tomute.id == message.author.id) return message.channel.send("`Нельзя замутить самого себя!`");
