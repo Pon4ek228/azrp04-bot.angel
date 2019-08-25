@@ -16,7 +16,7 @@ module.exports.run = async (bot, message, args) => {
   let reason = args.slice(2).join(" ");
   if(!reason) return message.channel.send("`Не указана причина мута!`");
   if(!tomute.id == message.author.id) return message.channel.send("`Нельзя замутить самого себя!`");
-  if (tomute.highestRole.position >= message.member.highestRole.position) return message.channel.send("`Нельзя использовать на старших по должности.`");
+  if (tomute.highestRole.position >= message.member.highestRole.position) return message.channel.send("`Нельзя использовать на старших по должности или на самом себе.`");
 
   let muterole = message.guild.roles.find(`name`, "Muted ☊");
   //start of create role
