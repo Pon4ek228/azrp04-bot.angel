@@ -51,7 +51,7 @@ module.exports.run = async (bot, message, args) => {
 
   try{
     const channel = message.client.channels.find('name', "🌏общение");
-channel.send(`\`Модератор\` ${message.author} \`заглушил игрока\` ${tomute} \`на ${mutetime}. Причина:\` **${reason}.**`);
+channel.send(`\`Модератор\` ${message.author} \`заглушил игрока\` ${tomute} на ${mutetime}. Причина: **${reason}.**`);
   } catch(e) {
     message.reply(`\`нет доступа.\``)
   }
