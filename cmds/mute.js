@@ -44,14 +44,14 @@ module.exports.run = async (bot, message, args) => {
 
  try{
   await tomute.addRole(muterole);
-  message.channel.send(`\`Модератор \`${message.author}\` выдал мут игроку \`${tomute}\` на ${mutetime}. Причина: \`**${reason}.**\`\``);
+  message.channel.send(`\`Модератор \`${message.author}\` выдал мут игроку \`${tomute}\` на ${mutetime}. Причина: \`**${reason}.**`);
 } catch(e) {
   message.channel.send(`**Ошибка: ${e.message}**`);
 }
 
   try{
     const channel = message.client.channels.find('name', "🌏общение");
-channel.send(`\`Модератор \`${message.author}\` заглушил игрока \`${tomute}\` на ${mutetime}. Причина: \`**${reason}.**\`\``);
+channel.send(`\`Модератор \`${message.author}\` заглушил игрока \`${tomute}\` на ${mutetime}. Причина: \`**${reason}.**`);
   } catch(e) {
     message.reply(`\`нет доступа.\``)
   }
