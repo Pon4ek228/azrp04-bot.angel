@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args) => {
   
   ["Агент ФБР", "Сотрудник Полиции ЛС", "Сотрудник Полиции СФ", "Сотрудник Полиции ЛВ", "Сотрудник Окружной Полиции", "Сотрудник Правительства", "Сотрудник Центрального банка", "Военнослужащий Армии ЛС", "Военнослужащий Армии СФ", "Сотрудник Тюрьмы", "Сотрудник Больницы ЛС", "Сотрудник Больницы СФ", "Сотрудник Больницы ЛВ", "Сотрудник СМИ СФ", "Сотрудник СМИ ЛС", "Сотрудник СМИ ЛВ", "Сотрудник Автошколы", "Член банды Night Wolfs", "Член банды The Rifa", "Член банды Los-Santos Vagos", "Член банды Grove Street", "Член банды Varios Los Aztecas", "Член банды The Ballas", "Член Русской Мафии", "Член мафии Yakuza", "Член мафии La Cosa Nostra", "Член мафии Warlock MC"].forEach(rolename => {
 let removeall = message.guild.roles.find(r => r.name == rolename);
-tomute.removeRole(removeall);
+target.removeRole(removeall);
   });
 
 	try {
